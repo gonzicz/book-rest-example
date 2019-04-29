@@ -31,8 +31,8 @@ public class Book {
     public Book() {
     }
 
-    public Book(String title) {
-        this.title = title;
+    public long getId() {
+        return id;
     }
 
     public String getTitle() {
@@ -52,12 +52,12 @@ public class Book {
         this.isbnNumber = isbnNumber;
     }
 
-    public String getPublicationDate() {
-        return publicationDate;
-    }
-
     public void setPublicationDate(String publicationDate) {
         this.publicationDate = publicationDate;
+    }
+
+    public String getPublicationDate() {
+        return this.publicationDate;
     }
 
     public String getTags() {
@@ -72,9 +72,8 @@ public class Book {
         return author;
     }
 
-    public Book setAuthor(Author author) {
+    public void setAuthor(Author author) {
         this.author = author;
-        return null;
     }
 
 }

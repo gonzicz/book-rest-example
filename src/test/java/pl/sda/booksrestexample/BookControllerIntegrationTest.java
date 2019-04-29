@@ -32,4 +32,16 @@ public class BookControllerIntegrationTest {
         .andExpect(status().isOk())                           // sprawdzamy czy status odpowiedzi jest OK czyli równy 200
         .andExpect(content().string("[]"));     // oraz czy zwraca nam pustą tablice
     }
+
+    @DisplayName("gdy wywołanie GET na /autors, to zwróć pustą tablicę, " +
+            "gdy nie ma żadnych ksiązęk  w bazie danych")
+    @Test
+    void authorTest1() throws Exception {
+        // when
+        mockMvc.perform(get("/author"))                             // test wykonuje zapytanie GET na adres "/books"
+
+        // then
+        .andExpect(status().isOk())                                 // sprawdzamy czy status odpowiedzi jest OK czyli równy 200
+                .andExpect(content().string("[]"));  // oraz czy zwraca nam pustą tablice
+    }
 }
